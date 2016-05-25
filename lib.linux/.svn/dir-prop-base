@@ -1,6 +1,0 @@
-K 13
-svn:externals
-V 94
-http://v-dep48server:8081/svn/repo/Antares/platform/trunk/framework/trunk/lib.linux framework
-
-END
