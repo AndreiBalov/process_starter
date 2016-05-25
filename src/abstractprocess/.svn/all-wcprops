@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/repo/!svn/ver/31095/Antares/platform/trunk/abstractprocess/trunk/src/abstractprocess
+END
+abstractprocess.pro
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/repo/!svn/ver/31538/Antares/platform/trunk/abstractprocess/trunk/src/abstractprocess/abstractprocess.pro
+END
+abstractprocess.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/repo/!svn/ver/31540/Antares/platform/trunk/abstractprocess/trunk/src/abstractprocess/abstractprocess.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/repo/!svn/ver/31547/Antares/platform/trunk/abstractprocess/trunk/src/abstractprocess/main.cpp
+END
+processexceptions.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/repo/!svn/ver/30497/Antares/platform/trunk/abstractprocess/trunk/src/abstractprocess/processexceptions.h
+END
+abstractprocess.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/repo/!svn/ver/31540/Antares/platform/trunk/abstractprocess/trunk/src/abstractprocess/abstractprocess.h
+END

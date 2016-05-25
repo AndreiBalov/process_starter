@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <process>
+        <parameter name = "type">1</parameter>
+    </process>
+    <plugins>
+	<plugin type = "simple">
+	    <file>../../tests/abstractprocesstest/libudpportd.so</file>
+            <version>1.0.0</version>
+	    <parameter name = "address">192.168.13.94</parameter> 
+	    <parameter name = "port">7878</parameter>
+	</plugin>
+
+        <plugin type = "simple">
+            <file>../../tests/abstractprocesstest/libudptransportd.so</file>
+            <version>1.0.0</version>
+        </plugin>
+
+	<plugin type = "simple">
+	    <file>../../tests/abstractprocesstest/libimitatordeviced.so</file>
+	    <version>1.0.0</version>
+	    <parameter name = "address">192.168.13.101</parameter>
+	</plugin>
+    
+	<plugin type = "complex">
+	    <file>../../tests/abstractprocesstest/libchanneld.so</file>
+            <version>1.0.0</version>
+            <parameter name = "object">../../tests/abstractprocesstest/libudpportd.so</parameter>
+	    <parameter name = "object">../../tests/abstractprocesstest/libudptransportd.so</parameter>
+	    <parameter name = "object">../../tests/abstractprocesstest/libimitatordeviced.so</parameter>
+	    <parameter name = "selfaddress">192.168.13.94</parameter>
+	</plugin>
+    </plugins>
+</configuration>

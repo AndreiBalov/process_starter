@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/repo/!svn/ver/31091/Antares/platform/trunk/framework/trunk/include
+END
+configurationstringparameter.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/repo/!svn/ver/30955/Antares/platform/trunk/framework/trunk/include/configurationstringparameter.h
+END
+transportmessage.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/repo/!svn/ver/31091/Antares/platform/trunk/framework/trunk/include/transportmessage.h
+END
+tsubscriptionmanager.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/repo/!svn/ver/30340/Antares/platform/trunk/framework/trunk/include/tsubscriptionmanager.h
+END
+transmitterserver.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/repo/!svn/ver/30159/Antares/platform/trunk/framework/trunk/include/transmitterserver.h
+END
+localsocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repo/!svn/ver/31091/Antares/platform/trunk/framework/trunk/include/localsocket.h
+END
+portinterface.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/repo/!svn/ver/30955/Antares/platform/trunk/framework/trunk/include/portinterface.h
+END
+processconfiguration.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/repo/!svn/ver/30955/Antares/platform/trunk/framework/trunk/include/processconfiguration.h
+END
+loger.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/repo/!svn/ver/29707/Antares/platform/trunk/framework/trunk/include/loger.h
+END
+configurationparameter.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/repo/!svn/ver/30955/Antares/platform/trunk/framework/trunk/include/configurationparameter.h
+END
+xmlconfigurationreader.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/repo/!svn/ver/30955/Antares/platform/trunk/framework/trunk/include/xmlconfigurationreader.h
+END
+transmitterclient.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/repo/!svn/ver/29707/Antares/platform/trunk/framework/trunk/include/transmitterclient.h
+END
+serverdb.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/repo/!svn/ver/30340/Antares/platform/trunk/framework/trunk/include/serverdb.h
+END
+cleanexit.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/repo/!svn/ver/29707/Antares/platform/trunk/framework/trunk/include/cleanexit.h
+END
+transportinterface.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/repo/!svn/ver/29950/Antares/platform/trunk/framework/trunk/include/transportinterface.h
+END
+plugininterface.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/repo/!svn/ver/30955/Antares/platform/trunk/framework/trunk/include/plugininterface.h
+END
+ipcnode.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/repo/!svn/ver/29707/Antares/platform/trunk/framework/trunk/include/ipcnode.h
+END
+localserver.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repo/!svn/ver/31091/Antares/platform/trunk/framework/trunk/include/localserver.h
+END
+clientdb.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/repo/!svn/ver/30324/Antares/platform/trunk/framework/trunk/include/clientdb.h
+END
+protocols.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/repo/!svn/ver/29707/Antares/platform/trunk/framework/trunk/include/protocols.h
+END
+module.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repo/!svn/ver/30955/Antares/platform/trunk/framework/trunk/include/module.h
+END
+databaseinterface.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/repo/!svn/ver/30243/Antares/platform/trunk/framework/trunk/include/databaseinterface.h
+END
+pluginconfiguration.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/repo/!svn/ver/30955/Antares/platform/trunk/framework/trunk/include/pluginconfiguration.h
+END
+coreclient.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/repo/!svn/ver/30180/Antares/platform/trunk/framework/trunk/include/coreclient.h
+END
+configurationpluginparameter.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/repo/!svn/ver/30955/Antares/platform/trunk/framework/trunk/include/configurationpluginparameter.h
+END
+transmiter.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/repo/!svn/ver/29707/Antares/platform/trunk/framework/trunk/include/transmiter.h
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repo/!svn/ver/30955/Antares/platform/trunk/framework/trunk/include/common.h
+END
+configurationreader.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/repo/!svn/ver/29895/Antares/platform/trunk/framework/trunk/include/configurationreader.h
+END
