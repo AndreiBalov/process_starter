@@ -2,7 +2,7 @@
 #define ABSTRACTPROCESS_H
 
 #include <QObject>
-#include <QMap>
+#include <QHash>
 #include <memory>
 #include "processexceptions.h"
 #include "common.h"
@@ -39,12 +39,12 @@ public:
      * @param argv - массив строк
      * @return map с ключами и его значениями
      */
-    static QMap<QString,QString> argumentsParse(const char* keys, int argc, char* argv[]) throw (InvalidKeyException,
+    static QHash<QString,QString> argumentsParse(const char* keys, int argc, char* argv[]) throw (InvalidKeyException,
                                                                                                  MultipleKeyException);
 private:
     /**
      * @brief configParse считать файл конфигурации
-     * @return указатель на структуру описания процесса
+     * @return указатель на описатель процесса
      */
     std::shared_ptr<ProcessConfiguration> configParse() throw (ConfigException);
 
@@ -58,21 +58,21 @@ private:
     /**
      * @brief processtypeToStr Преобразование типа процесса в строку
      * @param processType тип процесса
-     * @return строчное стредставление
+     * @return строчное представление
      */
     QString processtypeToStr(const ProcessType processType) const;
 
     /**
      * @brief addInternalPluginsInfo Добавить данные по встроенным плагинам для ядра
-     * @param plugin
+     * @param plugin ссылка на объект плагина
      */
     void addInternalPluginsInfo(const PluginInterface& plugin) const;
 
 private:
-    QMap<QString,QString>   processArguments_; /*!< аргументы процесса */
-    QString                 processName_;      /*!< имя процесса, назначенного ядром */
-    CoreClient*             coreClient_;       /*!< IPC клиент для связи с ядром */
-    std::unique_ptr<ConfigurationReader> configReader_;     /*!< класс для чтения файла конфигурации */
+    QHash<QString,QString>  processArguments_;           /*!< аргументы процесса */
+    QString                 processName_;                /*!< имя процесса, назначенное ядром */
+    CoreClient*             coreClient_;                 /*!< IPC клиент для связи с ядром */
+    std::unique_ptr<ConfigurationReader> configReader_;  /*!< для чтения файла конфигурации */
 };
 
 #endif // ABSTRACTPROCESS_H

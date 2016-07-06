@@ -3,6 +3,7 @@
 #include "abstractprocess.h"
 #include <stdexcept>
 #include <QString>
+#include <QHash>
 
 
 class AbstractprocessTest : public QObject
@@ -14,8 +15,8 @@ public:
 
 private Q_SLOTS:
     void worktest();
-    //void argumentsParseMultipleKey();
-    //void argumentsParseInvalidKey();
+    void argumentsParseMultipleKey();
+    void argumentsParseInvalidKey();
     void createProcess();
     void badConfigRead();
     void badPluginLoad();
@@ -28,14 +29,14 @@ AbstractprocessTest::AbstractprocessTest()
 
 void AbstractprocessTest::worktest()
 {
-    // подстановка аргументов с дублированием адного из ключей
+    // подстановка аргументов с дублированием одного из ключей
     const quint32 argc = 4;
     char* argv[argc] = {"testprocess", "-c../../tests/abstractprocesstest/testConfigComplexPlugin.xml", "-nChannel", "-sCoreServer"};
     const char* optstr = "n:s:c:";
 
     try
     {
-        QMap<QString,QString> parameters = AbstractProcess::argumentsParse(optstr, argc, argv);
+        QHash<QString,QString> parameters = AbstractProcess::argumentsParse(optstr, argc, argv);
         AbstractProcess process(parameters);
         //process.initProcess();
     }
@@ -46,7 +47,7 @@ void AbstractprocessTest::worktest()
     }
 }
 
-/*
+
 void AbstractprocessTest::argumentsParseMultipleKey()
 {
     // подстановка аргументов с дублированием адного из ключей
@@ -56,15 +57,15 @@ void AbstractprocessTest::argumentsParseMultipleKey()
 
     try
     {
-        QMap<QString,QString> parameters = AbstractProcess::argumentsParse(optstr, argc, argv);
+        QHash<QString,QString> parameters = AbstractProcess::argumentsParse(optstr, argc, argv);
     }
     catch(MultipleKeyException& a)
     {
         return;
     }
     QVERIFY2(false, "None exception with argv -cchannelprocessconfig.xml, -nChannel, -cCoreServer");
-}*/
-/*
+}
+
 void AbstractprocessTest::argumentsParseInvalidKey()
 {
     // подстановка аргументов когда один ключ не правильный
@@ -73,18 +74,18 @@ void AbstractprocessTest::argumentsParseInvalidKey()
     const char* optstr = "n:s:c:";
     try
     {
-        QMap<QString,QString> parameters = AbstractProcess::argumentsParse(optstr, argc, argv);
+        QHash<QString,QString> parameters = AbstractProcess::argumentsParse(optstr, argc, argv);
     }
     catch(InvalidKeyException& a)
     {
         return;
     }
     QVERIFY2(false, "None exception with invalid key parameter \"-cchannelprocessconfig.xml -nChannel -dCoreServer");
-}*/
+}
 
 void AbstractprocessTest::createProcess()
 {
-    QMap<QString,QString> parameters;
+    QHash<QString,QString> parameters;
     parameters.insert("m", "channelprocessconfig.xml");
     parameters.insert("s", "CoreServer.xml");
     parameters.insert("n", "Channel.xml");
@@ -102,7 +103,7 @@ void AbstractprocessTest::createProcess()
 
 void AbstractprocessTest::badConfigRead()
 {
-    QMap<QString,QString> parameters;
+    QHash<QString,QString> parameters;
     parameters.insert("c", "../../tests/abstractprocesstest/testConfigComplexPlugi.xml");
     parameters.insert("s", "CoreServer.xml");
     parameters.insert("n", "Channel.xml");
@@ -121,7 +122,7 @@ void AbstractprocessTest::badConfigRead()
 
 void AbstractprocessTest::badPluginLoad()
 {
-    QMap<QString,QString> parameters;
+    QHash<QString,QString> parameters;
     parameters.insert("c", "../../tests/abstractprocesstest/testConfigBadPlugin.xml");
     parameters.insert("s", "CoreServer.xml");
     parameters.insert("n", "Channel");

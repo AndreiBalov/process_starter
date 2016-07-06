@@ -27,17 +27,4 @@ int main(int argc, char *argv[])
         qDebug() << "Undefined exception";
         exit(EXIT_FAILURE);
     }
-
-
-    // Процессу можно передать один параметр(файл конфигурации), тогда процесс не будет подключатся к серверу
-    // или нужно передавать все 3
-    // + 1 передаётся по умолчанию, это имя процесса
-    //if(1/*argc == 4 || argc == 2*/)
-   // {
-    //}
-   // else
-    //{
-    //    qDebug() << "Invalid parameters count. Need -n Name -s coreServerName -c config file OR ONLY -cconfig";
-    //    exit(EXIT_FAILURE);
-   // }
 }

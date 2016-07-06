@@ -1,7 +1,6 @@
 /** @file configurationreader.h
     @brief Файл содержит описание класса ConfigurationReader.
     @details
-    @author Васильев С.В.
     @version 1.0.0
     @date февраль 2016 г.
 */

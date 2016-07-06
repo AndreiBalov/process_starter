@@ -26,11 +26,11 @@ AbstractProcess::~AbstractProcess()
 
 }
 
-QMap<QString,QString> AbstractProcess::argumentsParse(const char* keys, int argc, char* argv[]) throw (InvalidKeyException,
+QHash<QString,QString> AbstractProcess::argumentsParse(const char* keys, int argc, char* argv[]) throw (InvalidKeyException,
                                                                                                        MultipleKeyException)
 {
     QString keyStr(keys);
-    QMap<QString,QString> parameters;
+    QHash<QString,QString> parameters;
     int optResult = 0;
     while((optResult = getopt(argc, argv, keys)) != -1)
     {
@@ -39,7 +39,7 @@ QMap<QString,QString> AbstractProcess::argumentsParse(const char* keys, int argc
             // если такого аргумента еще нет
             if(parameters.find(QString(optResult)) == parameters.end())
             {
-                parameters.insert(QString(optResult), QString(optarg));
+                parameters[QString(optResult)] = QString(optarg);
             }
             else
             {

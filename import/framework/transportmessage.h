@@ -1,7 +1,6 @@
 /** @file transportmessage.h
     @brief Файл содержит описание класса TransportMessage.
     @details
-	@author Васильев С.В.
 	@version 1.0.0
 	@date декабрь 2015 г.
 */

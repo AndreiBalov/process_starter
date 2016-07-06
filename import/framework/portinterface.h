@@ -1,7 +1,6 @@
 /*!
 * \file  portinterface.h
 * \brief Описывает интерфейс работы с портом расширения
-* \author Балов А.С. отд.0448
 */
 #ifndef PORTINTERFACE
 #define PORTINTERFACE
