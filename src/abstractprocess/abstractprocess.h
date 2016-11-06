@@ -30,7 +30,8 @@ public:
      * @detailed Разбор файла конфигурации, создание плагинов, передача данных версий процесса и плагинов в ядро
      * и настройка объектов межпроцессного взаимодействия, указанных в файле конфигурации
      */
-    int init(int argc, char* argv[]) throw (ProcessException);
+    int init(int argc, char* argv[]) throw (PluginInitException,
+                                            PluginLoadException);
 
     /**
      * @brief argumentsParse - разбор строки с аргументами процессов
@@ -69,10 +70,10 @@ private:
     void addInternalPluginsInfo(const PluginInterface& plugin) const;
 
 private:
-    QHash<QString,QString>  processArguments_;           /*!< аргументы процесса */
-    QString                 processName_;                /*!< имя процесса, назначенное ядром */
-    CoreClient*             coreClient_;                 /*!< IPC клиент для связи с ядром */
-    std::unique_ptr<ConfigurationReader> configReader_;  /*!< для чтения файла конфигурации */
+    QHash<QString,QString>  processArguments_; /*!< аргументы процесса */
+    QString                 processName_;      /*!< имя процесса, назначенное ядром */
+    CoreClient*             coreClient_                = nullptr; /*!< IPC клиент для связи с ядром */
+    std::unique_ptr<ConfigurationReader> configReader_ = nullptr; /*!< для чтения файла конфигурации */
 };
 
 #endif // ABSTRACTPROCESS_H

@@ -38,11 +38,9 @@ void AbstractprocessTest::worktest()
     {
         QHash<QString,QString> parameters = AbstractProcess::argumentsParse(optstr, argc, argv);
         AbstractProcess process(parameters);
-        //process.initProcess();
     }
     catch(std::exception& a)
     {
-
         QVERIFY2(false,a.what());
     }
 }

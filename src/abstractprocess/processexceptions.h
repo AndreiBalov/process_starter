@@ -25,17 +25,17 @@ class InvalidKeyException : public ProcessException
 {
 public:
     InvalidKeyException(const std::string& msg)
-        : ProcessException(msg) {}
-
+        : ProcessException("Invalid key \"" + msg +
+                           + "\" Use keys -n -s -c !")
+    {}
     virtual ~InvalidKeyException() noexcept {}
-
 };
 
 class MultipleKeyException : public ProcessException
 {
 public:
     MultipleKeyException(const std::string& msg)
-        : ProcessException(msg) {}
+        : ProcessException("Multiple key argument \"" + msg + "\". Use arguments in one instance!") {}
 
     virtual ~MultipleKeyException() noexcept {}
 };
@@ -43,8 +43,8 @@ public:
 class ConfigException : public ProcessException
 {
 public:
-    ConfigException(const std::string& msg)
-        : ProcessException(msg) {}
+    ConfigException()
+        : ProcessException("Can't read config file!") {}
 
     virtual ~ConfigException() noexcept {}
 };
@@ -53,7 +53,7 @@ class PluginLoadException : public ProcessException
 {
 public:
     PluginLoadException(const std::string& msg)
-        : ProcessException(msg) {}
+        : ProcessException("Can't create plugin " + msg) {}
 
     virtual ~PluginLoadException() noexcept {}
 };
@@ -62,7 +62,7 @@ class PluginInitException : public ProcessException
 {
 public:
     PluginInitException(const std::string& msg)
-        : ProcessException(msg) {}
+        : ProcessException("Can't init plugin " + msg) {}
 
     virtual ~PluginInitException() noexcept {}
 };

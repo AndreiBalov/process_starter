@@ -8,7 +8,6 @@ const char* optstr = "n:s:c:";
 int main(int argc, char *argv[])
 {
     CleanExit cleanexit;
-
     try
     {
         QMap<QString,QString> parameters = AbstractProcess::argumentsParse(optstr, argc, argv);
@@ -16,10 +15,14 @@ int main(int argc, char *argv[])
         return process.init(argc, argv);
     }
 
+    catch (std::bad_alloc& excpt)
+    {
+        qDebug() << QString::fromStdString(excpt.what());
+        exit(EXIT_FAILURE);
+    }
     catch(std::exception& a)
     {
-        std::string str = a.what();
-        qDebug() << QString::fromStdString(str);
+        qDebug() << QString::fromStdString(a.what());
         exit(EXIT_FAILURE);
     }
     catch(...)

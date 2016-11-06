@@ -43,14 +43,12 @@ QHash<QString,QString> AbstractProcess::argumentsParse(const char* keys, int arg
             }
             else
             {
-                throw MultipleKeyException("Multiple key argument \"" + QString(optResult).toStdString()
-                                            + "\". Use arguments in one instance!");
+                throw MultipleKeyException(QString(optResult).toStdString());
             }
         }
         else
         {
-            throw InvalidKeyException("Invalid key \"" + QString(optopt).toStdString()
-                                       + "\" Use keys -n -s -c !");
+            throw InvalidKeyException(QString(optopt).toStdString());
         }
     }
     return parameters;
@@ -65,7 +63,7 @@ std::shared_ptr<ProcessConfiguration> AbstractProcess::configParse() throw (Conf
     }
     else
     {
-        throw ConfigException("Can't read config file!");
+        throw ConfigException;
     }
 }
 
@@ -120,7 +118,8 @@ void AbstractProcess::addInternalPluginsInfo(const PluginInterface& plugin) cons
     }
 }
 
-int AbstractProcess::init(int argc, char* argv[]) throw (ProcessException)
+int AbstractProcess::init(int argc, char* argv[]) throw (PluginLoadException,
+                                                         PluginInitException)
 {
     std::shared_ptr<ProcessConfiguration> config = configParse();
     ProcessType processType = config->getProcessType();
@@ -139,10 +138,10 @@ int AbstractProcess::init(int argc, char* argv[]) throw (ProcessException)
     auto plugin = loadPlugin(pluginParameter->getFileName());
 
     if (!plugin)
-        throw ProcessException("Can't create plugin " + pluginParameter->getFileName().toStdString());
+        throw PluginLoadException(pluginParameter->getFileName().toStdString());
 
     if (plugin->init(pluginParameter->getPluginConfiguration()) != 0)
-        throw ProcessException("Can't init plugin " + plugin->getModuleName().toStdString());
+        throw PluginInitException(plugin->getModuleName().toStdString());
     if(coreClient_)
     {
         coreClient_->setModuleInfo(processName_, processtypeToStr(processType), VERSION);
