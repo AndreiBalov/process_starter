@@ -14,12 +14,6 @@ int main(int argc, char *argv[])
         AbstractProcess process(parameters);
         return process.init(argc, argv);
     }
-
-    catch (std::bad_alloc& excpt)
-    {
-        qDebug() << QString::fromStdString(excpt.what());
-        exit(EXIT_FAILURE);
-    }
     catch(std::exception& a)
     {
         qDebug() << QString::fromStdString(a.what());
