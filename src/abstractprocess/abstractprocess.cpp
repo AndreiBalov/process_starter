@@ -18,7 +18,7 @@ AbstractProcess::AbstractProcess(QMap<QString,QString>& arguments, QObject* pare
         processName_   = (arguments.find("n")) != arguments.end() ? arguments["n"] : throw std::invalid_argument("can't find argument 'n'");
         coreClient_    = new CoreClient(coreServerName, this);
     }
-    configReader_ = std::unique_ptr<ConfigurationReader>(new XmlConfigurationReader(configName));
+    configReader_ = std::make_unique<ConfigurationReader>(configName);
 }
 
 AbstractProcess::~AbstractProcess()
