@@ -18,7 +18,8 @@ class ProcessConfiguration;
 /**
  * @brief The AbstractProcess class
  * @defined Класс процеса, расширяемого плагинами
- * Получает данные из файла конфигурации и создаёт объект плагина
+ * Получает данные из файла конфигурации и создаёт объект плагина,
+ * который будет выполнятся в этом процессе
  */
 class AbstractProcess : public QObject
 {
