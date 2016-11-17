@@ -1,7 +1,8 @@
-#include <QDebug>
-#include <stdexcept>
-#include "cleanexit.h"
 #include "abstractprocess.h"
+#include "cleanexit.h"
+
+#include <stdexcept>
+#include <QDebug>
 
 const char* optstr = "n:s:c:";
 

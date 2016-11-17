@@ -24,6 +24,5 @@ OBJECTS_DIR = $${BUILD_PATH}/obj/
 LIBS += -L$${LIBS_PATH}/
 INCLUDEPATH += $${INC_PATH}/
 INCLUDEPATH += $${IMPORT_PATH}/framework \
-               $${IMPORT_PATH}/channelframework
 
 QMAKE_CXXFLAGS += -std=c++0x
