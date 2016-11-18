@@ -25,14 +25,14 @@ class AbstractProcess : public QObject
 {
     Q_OBJECT
 public:
-    explicit AbstractProcess(QMap<QString,QString>& arguments, QObject* parent = 0) throw (std::invalid_argument);
+    explicit AbstractProcess(QMap<QString,QString>& arguments, QObject* parent = 0);
 
     /**
      * @brief processConfig
      * @detailed Разбор файла конфигурации, создание плагинов, передача данных версий процесса и плагинов в ядро
      * и настройка объектов межпроцессного взаимодействия, указанных в файле конфигурации
      */
-    int init(int argc, char* argv[]) throw (ProcessException);
+    int init(int argc, char* argv[]);
 
     /**
      * @brief argumentsParse - разбор строки с аргументами процессов
@@ -41,8 +41,7 @@ public:
      * @param argv - массив строк
      * @return map с ключами и его значениями
      */
-    static QMap<QString,QString> argumentsParse(const char* keys, int argc, char* argv[]) throw (InvalidKeyException,
-                                                                                                 MultipleKeyException);
+    static QMap<QString,QString> argumentsParse(const char* keys, int argc, char* argv[]);
 private:
     /**
      * @brief configParse считать файл конфигурации
