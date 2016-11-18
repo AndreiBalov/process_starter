@@ -47,7 +47,7 @@ private:
      * @brief configParse считать файл конфигурации
      * @return указатель на структуру описания процесса
      */
-    std::shared_ptr<ProcessConfiguration> configParse() throw (ConfigException);
+    std::shared_ptr<ProcessConfiguration> configParse();
 
     /**
      * @brief loadPlugin - загрузка плагина
