@@ -8,7 +8,7 @@
 
 #include "getopt.h"
 
-AbstractProcess::AbstractProcess(QMap<QString,QString>& arguments, QObject* parent) throw (std::invalid_argument)
+AbstractProcess::AbstractProcess(QMap<QString,QString>& arguments, QObject* parent)
     : QObject(parent)
 {
     // обязательный аргумент с файлом конфигурации
@@ -23,8 +23,7 @@ AbstractProcess::AbstractProcess(QMap<QString,QString>& arguments, QObject* pare
     }
 }
 
-QMap<QString,QString> AbstractProcess::argumentsParse(const char* keys, int argc, char* argv[]) throw (InvalidKeyException,
-                                                                                                       MultipleKeyException)
+QMap<QString,QString> AbstractProcess::argumentsParse(const char* keys, int argc, char* argv[])
 {
     QString keyStr(keys);
     QMap<QString,QString> parameters;
@@ -53,7 +52,7 @@ QMap<QString,QString> AbstractProcess::argumentsParse(const char* keys, int argc
     return parameters;
 }
 
-int AbstractProcess::init(int argc, char* argv[]) throw (ProcessException)
+int AbstractProcess::init(int argc, char* argv[])
 {
     std::shared_ptr<ProcessConfiguration> config = configParse();
     ProcessType processType = config->getProcessType();
@@ -85,7 +84,7 @@ int AbstractProcess::init(int argc, char* argv[]) throw (ProcessException)
     return app->exec();
 }
 
-std::shared_ptr<ProcessConfiguration> AbstractProcess::configParse() throw (ConfigException)
+std::shared_ptr<ProcessConfiguration> AbstractProcess::configParse()
 {
     std::shared_ptr<ProcessConfiguration> config = configReader_->read();
     if (config)
