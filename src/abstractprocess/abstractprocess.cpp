@@ -97,13 +97,14 @@ std::shared_ptr<ProcessConfiguration> AbstractProcess::configParse()
     }
 }
 
-PluginInterface* AbstractProcess::loadPlugin(const QString& file)
+std::unique_ptr<PluginInterface> AbstractProcess::loadPlugin(const QString& file)
 {
     QPluginLoader loader(file);
     QObject* object = loader.instance();
     if (!object)
         return nullptr;
-    return qobject_cast<PluginInterface*>(object);
+    PluginInterface* obj = dynamic_cast<PluginInterface*>(object);
+    return std::unique_ptr<PluginInterface>(obj);
 }
 
 QString AbstractProcess::processtypeToStr(const ProcessType processType) const
