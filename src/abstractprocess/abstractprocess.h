@@ -54,7 +54,7 @@ private:
      * @param file - имя файла(вместе с путём)
      * @return указатель на PluginInterface
      */
-    PluginInterface* loadPlugin(const QString& file);
+    std::unique_ptr<PluginInterface> loadPlugin(const QString& file);
 
     /**
      * @brief processtypeToStr Преобразование типа процесса в строку
